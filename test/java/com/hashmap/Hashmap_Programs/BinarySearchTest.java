@@ -40,5 +40,24 @@ public class BinarySearchTest {
     	Assert.assertEquals(13,size);
 	}
 	
+	// UC3 create a binary tree and adding value & Search a Element
+	@Test
+	public void givenNumber_WhenAddedBSTShouldPresentNumberReturn() {
+    	MyBinaryTree<Integer> binaryTree = new MyBinaryTree<>();
+    	binaryTree.add(56);
+    	binaryTree.add(30);
+    	binaryTree.add(70);
+    	binaryTree.add(11);
+    	binaryTree.add(22);
+    	binaryTree.add(33);
+    	binaryTree.add(44);
+    	binaryTree.add(55);
+    	binaryTree.add(66);
+    	binaryTree.add(77);
+    	binaryTree.add(88);
+    	binaryTree.add(99);
+    	binaryTree.add(43);
+    	Assert.assertEquals(true, binaryTree.search(30));
+	}
 	
 }

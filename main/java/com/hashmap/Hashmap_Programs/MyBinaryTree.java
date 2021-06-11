@@ -1,5 +1,7 @@
 package com.hashmap.Hashmap_Programs;
 
+import com.hashmap.*;
+
 public class MyBinaryTree<K extends Comparable<K>>
 {
 	// Declearing a node
@@ -40,5 +42,22 @@ public class MyBinaryTree<K extends Comparable<K>>
 
 	private int getSizeRecusive(MyBinaryNode<K> current) {
 		return current == null ? 0 : 1 + this.getSizeRecusive(current.left) + this.getSizeRecusive(current.right);
+	}
+	
+	
+	public  boolean search(K key) {
+    	return search_Node_In_Binary_Tree(root, key);
+	}
+
+	public boolean search_Node_In_Binary_Tree(MyBinaryNode<K> root, K key) 
+	{
+    	if (root == null)
+        		return false;
+    	if (root.key.compareTo(key) == 0)
+        		return true;
+    	else if (root.key.compareTo(key) > 0)
+       	 	return search_Node_In_Binary_Tree(root.left, key);
+    	else
+        		return search_Node_In_Binary_Tree(root.right, key);
 	}
 }
